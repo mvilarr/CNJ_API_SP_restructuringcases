@@ -1,0 +1,11 @@
+conteudo_sentença,motivo,count
+extinto,falta documentação,12
+extinto,não pagou custas,8
+extinto,desistência,7
+extinto,processual,4
+extinto,falta documentação + não pagou custas,1
+extinto,falta de operação ,1
+extinto,operação antes de 1 ano e entidade sem fins lucrativos,1
+extinto,fraude,1
+homologada desistência,do recurso de apelação contra extinção do processo,1
+indeferido o pedido,pedido de falência por execução trabalhista,1
