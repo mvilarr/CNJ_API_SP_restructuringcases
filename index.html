@@ -105,6 +105,49 @@
             text-align: center;
         }
 
+        .full-width img {
+            width: 100%;
+            display: block;
+        }
+
+        .hero-credit {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 0.5em 1em 0 0;
+            text-align: right;
+        }
+
+        .hero {
+            position: relative;
+        }
+
+        .hero img {
+            width: 100%;
+            display: block;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            padding: 1.8em 1em 3em;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.35) 55%, rgba(0,0,0,0) 100%);
+            text-align: center;
+        }
+
+        .hero-overlay h1 {
+            color: #fff;
+            margin: 0 0 0.3em;
+        }
+
+        .hero-overlay .subhead {
+            color: #f2f2f0;
+            font-size: 0.85em;
+            max-width: 640px;
+            margin: 0 auto;
+        }
+
         /* margin on mobile */
         @media (max-width: 640px) {
             body {
@@ -114,6 +157,49 @@
             .content {
                 padding-left: 0.5em;
                 padding-right: 0.5em;
+            }
+
+            h1 {
+                font-size: 1.8em;
+            }
+
+            .hero-overlay {
+                padding: 1.2em 0.8em 2em;
+            }
+
+            .hero-overlay .subhead {
+                font-size: 0.8em;
+            }
+
+            .chart-spacer {
+                height: 20vh;
+                font-size: 12px;
+                padding: 0 1em;
+                text-align: center;
+            }
+
+            #scroll-container {
+                height: 220vh;
+            }
+
+            #sticky-chart {
+                top: 5vh;
+                padding: 12px;
+            }
+
+            #sticky-chart .chart-title,
+            #chart-section .chart-title {
+                font-size: 17px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            h1 {
+                font-size: 1.4em;
+            }
+
+            .hero-overlay .subhead {
+                font-size: 0.72em;
             }
         }
 
@@ -198,15 +284,17 @@
 </head>
 
 <body>
-    <div class="content">
-        <div class="header">
-            <h1><strong>São Paulo Court dismisses 34 judicial reorganization cases in the past 13 months</h1></strong>
+    <div class="hero">
+        <img src="tjsp_credit_Antonio CarretaTJSP.jpg" alt="Fachada do Tribunal de Justiça de São Paulo">
+        <div class="hero-overlay">
+            <h1><strong>São Paulo Court dismisses 34 judicial reorganization cases in the past 13 months</strong></h1>
             <p class="subhead">Fifteen companies that failed to meet legal requirements attempted to obtain the benefits of the law, such as a one‑year suspension of collections </p>
         </div>
-        <figure>
-            <img src="tjsp_credit_Antonio CarretaTJSP.jpg">
-            <p class="photo-credit">Headquarters of the São Paulo Court of Justice | Antônio Carreta/TJSP</p>
-        </figure>
+    </div>
+    <div class="hero-credit">
+        <p class="photo-credit">Headquarters of the São Paulo Court of Justice | Antônio Carreta/TJSP</p>
+    </div>
+    <div class="content">
         <div class="byline">
             <p>By <a href="https://github.com/mvilarr">Marcela Villar</a> | 29 July 2026</p>
         </div>
@@ -305,7 +393,7 @@
              From this subset, each case was accessed individually, 
              as well as the companies' records with the Brazilian Federal Revenue Service,
               to obtain their economic sectors.  
-              The analysis was made with pandas (Python). Full code and data are available in the <a href="https://github.com/mvilarr">GitHub repository</a>.</p>
+              The analysis was made with pandas (Python). Full code and data are available in the <a href="https://github.com/mvilarr/CNJ_API_SP_restructuringcases">GitHub repository</a>.</p>
     </div>
 </div>
     </div>
@@ -325,7 +413,7 @@
 
         const width = 680;
         const rowH = 56;
-        const margin = { top: 8, right: 20, bottom: 30, left: 20 };
+        const margin = { top: 8, right: 20, bottom: 30, left: 50 };
         const height = data.length * rowH + margin.top + margin.bottom;
 
         const svg = d3.select('#chart-bars')
