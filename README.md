@@ -1,6 +1,6 @@
-Using the National Council of Justice (CNJ) API
+## Using the National Council of Justice (CNJ) API
 
--> About This Project
+### -> About This Project
 
 This project aims to collect and analyze data on judicial reorganization proceedings in the State of São Paulo, Brazil, through procedural communications published in the National Electronic Judicial Gazette (DJEN), created by the Brazilian National Council of Justice (CNJ) in 2016 to gradually replace the state-level official judicial gazettes.
 
@@ -10,7 +10,7 @@ According to information provided by the press offices of the TJSP and the CNJ, 
 
 Procedural communications issued by the TJSP before June 2025 are available through the state's official judicial gazette at: https://www.tjsp.jus.br/atc/dejesp/.
 
--> Main Findings
+### -> Main Findings
 
 During the period analyzed (June 2025–June 2026), I identified 42 judgments in judicial reorganization proceedings, 35 of which dismissed the case. The reasons for dismissal were:
 
@@ -21,7 +21,7 @@ During the period analyzed (June 2025–June 2026), I identified 42 judgments in
 2 cases because the company was not operating or had not been operating long enough to meet the legal requirements; and
 1 case because the type of debt was not eligible for judicial reorganization proceedings.
 
--> Data Collection
+### -> Data Collection
 
 Accessing the DJEN requires using a VPN configured to appear as if the user is located in Brazil.
 
@@ -33,7 +33,7 @@ The API allows searches by day, but it does not indicate how many items will be 
 
 Before making the requests, I used Python's calendar library to determine the number of days in each month, allowing me to perform daily requests. Within the same loop, I also created folders to save the data by month. However, I later regretted converting the JSON files directly into CSV format during this process because the data were nested. As a result, the destinatarios column—which contains the names of companies and their attorneys on the active side of the proceeding (polo ativo) was stored as a list of dictionaries.
 
--> Data Cleaning
+### -> Data Cleaning
 
 To resolve the issues caused by converting nested JSON data into CSV format, I converted the strings back into lists and extracted only the company names listed on the active side of the proceeding (polo A).
 
