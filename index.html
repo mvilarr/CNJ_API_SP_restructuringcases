@@ -212,7 +212,7 @@
             justify-content: center;
             color: #898781;
             font-size: 14px;
-            font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
+            font-family: "Source Serif 4", serif;
         }
 
         #chart-section {
@@ -223,15 +223,16 @@
 
         #chart-section .tick text { font-size: 11px; fill: #52514e; }
         #chart-section .grid line { stroke: #e1e0d9; stroke-width: 1; }
-        #chart-section .label { font-size: 13px; fill: #0b0b0b; font-family: -apple-system, "Helvetica Neue", Arial, sans-serif; }
-        #chart-section .bar { fill: #2a78d6; }
-        #chart-section .chart-title { font-size: 22px; font-weight: 600; margin: 0 0 6px; font-family: -apple-system, "Helvetica Neue", Arial, sans-serif; }
-        #chart-section .source { font-size: 12px; color: #898781; margin-top: 8px; border-top: 1px solid #e1e0d9; padding-top: 8px; font-family: -apple-system, "Helvetica Neue", Arial, sans-serif; }
+        #chart-section .label { font-size: 13px; fill: #0b0b0b; font-family: "Source Serif 4", serif}
+        #chart-section .bar { fill: #9e0b00; }
+        #chart-section .bubble-label { font-size: 11px; fill: #fff; text-anchor: middle; pointer-events: none; font-family: "Source Serif 4", serif; }
+        #chart-section .chart-title { font-size: 22px; font-weight: 600; margin: 0 0 3px; padding-bottom: 13px; font-family: "Source Serif 4", serif; }
+        #chart-section .source { font-size: 12px; color: #898781; margin-top: 8px; border-top: 1px solid #e1e0d9; padding-top: 8px; font-family: "Source Serif 4", serif}
 
         #scroll-container {
             height: 300vh;
             position: relative;
-            font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
+            font-family: "Source Serif 4", serif;
         }
 
         #sticky-chart {
@@ -243,9 +244,9 @@
             background: #fff;
         }
 
-        #sticky-chart .chart-title { font-size: 22px; font-weight: 600; margin: 0 0 6px; font-family: -apple-system, "Helvetica Neue", Arial, sans-serif; }
-        #sticky-chart .subtitle { font-size: 15px; color: #52514e; margin: 0 0 20px; font-family: -apple-system, "Helvetica Neue", Arial, sans-serif; }
-        #sticky-chart .source { font-size: 12px; color: #898781; margin-top: 12px; border-top: 1px solid #e1e0d9; padding-top: 8px; font-family: -apple-system, "Helvetica Neue", Arial, sans-serif; }
+        #sticky-chart .chart-title { font-size: 22px; font-weight: 600; margin: 0 0 6px; font-family: "Source Serif 4", serif}
+        #sticky-chart .subtitle { font-size: 15px; color: #52514e; margin: 0 0 20px; font-family: "Source Serif 4", serif }
+        #sticky-chart .source { font-size: 12px; color: #898781; margin-top: 12px; border-top: 1px solid #e1e0d9; padding-top: 8px; font-family: "Source Serif 4", serif }
 
         #sticky-chart .grid line { stroke: #e1e0d9; stroke-width: 1; }
         #sticky-chart .axis text { font-size: 11px; fill: #52514e; }
@@ -253,7 +254,34 @@
         #sticky-chart .axis line { stroke: #c3c2b7; }
         #sticky-chart .line-path { fill: none; stroke: #0f6e56; stroke-width: 2.5; }
         #sticky-chart .dot { fill: #0f6e56; opacity: 0; }
-        #sticky-chart .dot-label { font-size: 11px; fill: #0f6e56; opacity: 0; }
+        #sticky-chart .dot-label { font-size: 11px; fill: #6e0f0f; opacity: 0; }
+        #sticky-chart .divider-line { stroke: #9e0b00; stroke-width: 1.3; stroke-dasharray: 3,3; opacity: 0.7; }
+        #sticky-chart .divider-label { font-size: 10px; fill: #9e0b00; font-family: "Source Serif 4", serif; }
+
+        .scroll-textbox {
+            position: absolute;
+            width: 150px;
+            padding: 10px 12px;
+            font-family: "Source Serif 4", serif;
+            font-size: 13px;
+            line-height: 1.4;
+            color: #23261f;
+            background: rgba(253, 250, 242, 0.94);
+            border-left: 2px solid #9e0b00;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            pointer-events: none;
+            z-index: 5;
+        }
+        .scroll-textbox.is-visible { opacity: 1; }
+        .scroll-textbox.textbox-right { left: 4%; top: 20px; }
+        .scroll-textbox.textbox-left { left: 73%; top: 100px; }
+
+        @media (max-width: 640px) {
+            .scroll-textbox { width: 40%; font-size: 11px; padding: 7px 9px; }
+            .scroll-textbox.textbox-right { left: 3%; top: 14px; }
+            .scroll-textbox.textbox-left { left: 56%; top: 74px; }
+        }
     
     
 .methodology {
@@ -288,7 +316,6 @@
         <img src="tjsp_credit_Antonio CarretaTJSP.jpg" alt="Fachada do Tribunal de Justiça de São Paulo">
         <div class="hero-overlay">
             <h1><strong>Justice shuts down corporate restructuring cases over failure to meet legal requirements</strong></h1>
-            <p class="subhead">Fifteen companies that failed to meet legal requirements attempted to obtain the benefits of the law, such as a one‑year suspension of collections </p>
         </div>
     </div>
     <div class="hero-credit">
@@ -298,7 +325,7 @@
         <div class="byline">
             <p>By <a href="https://github.com/mvilarr">Marcela Villar</a> | 29 July 2026</p>
         </div>
-        <p>The São Paulo Court (TJSP) has closed 34 judicial reorganization cases over the past
+        <p>The <strong>São Paulo Court</strong> (Tribunal de Justiça do Estado de São Paulo, TJSP) has closed 34 judicial reorganization cases over the past
             thirteen months, between June 2025 and June 2026.
             Of this total, 15 companies attempted to benefit from the restructuring
             law without complying with its legal requirements.
@@ -309,12 +336,7 @@
 
         </p>
 
-        <p></p><div class="flourish-embed flourish-pictogram" data-src="visualisation/29833143">
-            <script src="https://public.flourish.studio/resources/embed.js"></script>
-            <noscript>
-                <img src="https://public.flourish.studio/visualisation/29833143/thumbnail" width="100%" alt="pictogram visualization" />
-            </noscript>
-        </div><p></p>
+        <p></p><div class="flourish-embed flourish-pictogram" data-src="visualisation/29833143"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/29833143/thumbnail" width="100%" alt="pictogram visualization" /></noscript></div><p></p>
 
         <p>One of the restructuring law's key benefits is the suspension of all collection actions against a company 
         for one year — the so-called "stay period." For indebted businesses, 
@@ -325,20 +347,19 @@
             reorganization in the first place.
         </p>
 
-        <p>Together, these 15 companies wanted to restructure R$ 565 million in debt, roughly US$ 100 million.
-            What do they have in common? Most are located in the interior of São Paulo and belong
-            to the construction or education sectors.
+        <p>Together, these 15 companies wanted to restructure R$ 565 million in debt, roughly US$ 110 million.
+            Most are located in the interior of São Paulo and the debt is concentrated in the construction and 
+            education sectors.
         </p>
 
         <div id="chart-section">
-            <p class="chart-title">Construction and education account for more than 90% of the debt in dismissed cases</p>
-            <svg id="chart-bars"></svg>
-            <p class="source">Source: Official Gazette of Brazil's Judiciary and court records</p>
+            <svg id="chart-bubble"></svg>
+            <p class="source">Source: Brazil's Official Judiciary Gazette and court records</p>
         </div>
 
         <p>One of the companies that filed for reorganization no longer operated,
-            having dismissed all employees the day before filing. This was New Hammer Indústria
-            e Comércio de Móveis, a furniture manufacturer based in Diadema, in the metropolitan
+            having dismissed all employees the day before filing. This was <strong>New Hammer Indústria
+            e Comércio de Móveis</strong>, a furniture manufacturer based in Diadema, in the metropolitan
             region of São Paulo. It sought to restructure nearly R$ 2 million (approximately
             US$ 350,000) in debt.</p>
 
@@ -359,138 +380,178 @@
         <p></p>
 
         <p>The number of dismissed cases like this increased between the second half of 2025 and the
-            first half of 2026. Last year, only two judicial reorganizations in São Paulo were
-            terminated, whereas this year, up to June 30, the number reached 32, which could indicate
-            an increase.
-        </p>
+            first half of 2026. </p>
 
 <!-- linha do tempo com scrollytelling -->
         <div id="scroll-container">
             <div id="sticky-chart">
-                <p class="chart-title">Justice of São Paulo closes 34 reestructuting cases in 13 months</p>
-                <p class="subtitle">32 cases were dismissed since January 2026, versus 2 in the second half of 2025</p>
                 <svg id="chart-line"></svg>
+                <div id="textbox-right" class="scroll-textbox textbox-right">Last year, only two judicial reorganizations were
+            terminated.</div>
+                <div id="textbox-left" class="scroll-textbox textbox-left">This year, up to June 30, the number reached 32</div>
                 <p class="source">Source: Official Gazette of the Judiciary</p>
             </div>
         </div>
 
-        <p>Another company that pursued a similar strategy was Instituto Santanense de Ensino Superior. 
+        <p>Another company that pursued a similar strategy was <strong>Instituto Santanense de Ensino Superior</strong>. 
             It holds the largest liability among the 15 companies, with more than R$230 million 
             (about US$42 million) in debt. The institute filed for judicial reorganization without 
             meeting the law's requirement of at least two years of business activity.</p>
         
-            <p>
-Although it had been operating since the 1960s, Santanense was a nonprofit — a legal 
+            <p>Although it had been operating since the 1960s, Santanense was a nonprofit — a legal 
 structure not covered by the law. It even changed its legal status to a for-profit business entity shortly 
 before filing for reorganization, but because it had not operated long enough under that new status, 
-the court ruled it lacked standing to file.
-        </p>
+the court ruled it lacked standing to file.</p>
 
         <p>Judicial reorganization is a step before bankruptcy. 
             Through it, a company may renegotiate its debt with creditors, 
             extending payment deadlines and applying discounts to the original debt if 
-            creditors approve the restructuring plan.
-        </p>
+            creditors approve the restructuring plan. </p>
     </div>
 
     <div class="content">
     <div class="methodology">
         <h3>Methodology</h3>
-        <p>The cases were collected through the undocumented API of the Official Judicial Gazette of the National Council of Justice (CNJ) filtering for São Paulo. 
-             Only judicial reorganization cases (class 129) and final judgments were considered for this analysis (42 cases). 
+        <p>The data was collected through the API of Brazil's Official Judiciary Gazette of the National Council of Justice (CNJ) filtering for São Paulo. 
+             Only judicial reorganization cases and final judgments were considered for this analysis. 
              The 42 judgments were read in their entirety to identify which cases 
-             had been dismissed (35 cases). 
+             had been dismissed (35 cases, 34 companies). 
              From this subset, each case was accessed individually, 
              as well as the companies' records with the Brazilian Federal Revenue Service,
               to obtain their economic sectors.  
-              The analysis was made with pandas (Python). Full code and data are available in the <a href="https://github.com/mvilarr/CNJ_API_SP_restructuringcases">GitHub repository</a>.</p>
+              The cleaning and analysis was made with pandas (Python) and the categorization of the 42 cases with Google Sheets. Full code and data are available in the <a href="https://github.com/mvilarr/CNJ_API_SP_restructuringcases">GitHub repository</a>.</p>
     </div>
 </div>
     </div>
     <p></p>
     <p></p>
 
-    <!-- ---------- script cases per segment ---------- -->
+    <!-- ---------- script: bubble chart em crescente (dívida por segmento) ---------- -->
     <script>
     (function () {
-        const data = [
-            { name: 'Construction', value: 286.2 },
-            { name: 'Education', value: 231.3 },
-            { name: 'Logistics', value: 26.4 },
-            { name: 'Rural producer / farmer', value: 18.2 },
-            { name: 'Furniture', value: 2.0 },
-            { name: 'Fishing', value: 0.5 },
-            { name: 'Fashion', value: 0.1 }
+        const colorBySeg = {
+            'Construction': '#2a78d6',
+            'Education': '#eb6834',
+            'Logistics': '#1baf7a',
+            'Rural producer / farmer': '#eda100',
+            'Furniture': '#008300',
+            'Fishing': '#e87ba4',
+            'Fashion': '#4a3aa7'
+        };
+
+        const raw = [
+            { label: 'Construction', value: 286.2 },
+            { label: 'Education', value: 231.3 },
+            { label: 'Logistics', value: 26.4 },
+            { label: 'Rural producer / farmer', value: 18.2 },
+            { label: 'Furniture', value: 2.0 },
+            { label: 'Fishing', value: 0.5 },
+            { label: 'Fashion', value: 0.1 }
         ];
 
-        const width = 680;
-        const rowH = 56;
-        const margin = { top: 8, right: 20, bottom: 30, left: 50 };
-        const height = data.length * rowH + margin.top + margin.bottom;
+        const width = 680, height = 440;
+        const sorted = [...raw].sort((a, b) => b.value - a.value);
 
-        const svg = d3.select('#chart-bars')
+        const rScale = d3.scaleSqrt().domain([0, sorted[0].value]).range([4, 130]);
+
+        const hub = { ...sorted[0], r: rScale(sorted[0].value), isHub: true };
+        const satellites = sorted.slice(1).map(d => ({ ...d, r: rScale(d.value) }));
+
+        const cx = width * 0.3, cy = height / 2;
+        hub.x = cx; hub.y = cy; hub.fx = cx; hub.fy = cy;
+
+        satellites.forEach((d, i) => {
+            const angle = (-100 + (200 / satellites.length) * i) * Math.PI / 180;
+            const radius = hub.r + d.r + 10;
+            d.x = cx + Math.cos(angle) * radius;
+            d.y = cy + Math.sin(angle) * radius;
+        });
+
+        const sim = d3.forceSimulation([hub, ...satellites])
+            .force('collide', d3.forceCollide(d => d.r + 2).iterations(4))
+            .force('radial', d3.forceRadial(d => d.isHub ? 0 : hub.r + d.r + 6, cx, cy).strength(d => d.isHub ? 0 : 0.25))
+            .force('y', d3.forceY(cy).strength(0.05))
+            .stop();
+
+        function clampToRightSide() {
+            satellites.forEach(d => {
+                const minX = cx + 2;
+                if (d.x - d.r * 0.15 < minX) d.x = minX + d.r * 0.15;
+            });
+        }
+
+        // garante que nenhuma bolha (ex: Educação, quase do tamanho do hub)
+        // ultrapasse as bordas do viewBox e seja cortada
+        function clampToBounds() {
+            [hub, ...satellites].forEach(d => {
+                if (d.isHub) return;
+                d.x = Math.max(d.r, Math.min(width - d.r, d.x));
+                d.y = Math.max(d.r, Math.min(height - d.r, d.y));
+            });
+        }
+
+        for (let i = 0; i < 260; i++) { sim.tick(); clampToRightSide(); clampToBounds(); }
+
+        const svg = d3.select('#chart-bubble')
             .attr('viewBox', `0 0 ${width} ${height}`)
             .attr('width', '100%')
             .attr('height', height)
             .attr('role', 'img')
-            .attr('aria-label', 'Gráfico de barras horizontais mostrando a dívida total por segmento, em milhões de reais, das empresas com processos de recuperação judicial encerrados.');
+            .attr('aria-label', 'Gráfico de bolhas em formato de crescente mostrando a dívida total por segmento; construção e educação dominam visualmente o conjunto.');
 
-        const maxVal = d3.max(data, d => d.value);
-        const x = d3.scaleLinear().domain([0, maxVal]).nice().range([margin.left, width - margin.right]);
+        const all = [hub, ...satellites];
 
-        const gridTicks = x.ticks(6);
+        const dollarsBySeg = {
+            'Construction': 56108360.42,
+            'Education': 45350614.81
+        };
 
-        svg.selectAll('line.grid')
-            .data(gridTicks)
-            .join('line')
-            .attr('class', 'grid')
-            .attr('x1', d => x(d)).attr('x2', d => x(d))
-            .attr('y1', margin.top).attr('y2', height - margin.bottom);
+        function fmtUSD(v) {
+            return '$' + (v / 1e6).toFixed(1) + 'M';
+        }
 
-        svg.selectAll('text.tick')
-            .data(gridTicks)
-            .join('text')
-            .attr('class', 'tick')
-            .attr('x', d => x(d)).attr('y', height - margin.bottom + 16)
-            .attr('text-anchor', 'middle')
-            .text(d => 'R$' + d + 'M');
-
-        const rows = svg.selectAll('g.row')
-            .data(data)
+        const node = svg.selectAll('g.node')
+            .data(all)
             .join('g')
-            .attr('class', 'row')
-            .attr('transform', (d, i) => `translate(0, ${margin.top + i * rowH})`);
+            .attr('transform', d => `translate(${d.x},${d.y})`);
 
-        rows.append('text')
-            .attr('class', 'label')
-            .attr('x', margin.left)
-            .attr('y', 14)
-            .text(d => d.name);
+        const circles = node.append('circle')
+            .attr('r', 0)
+            .attr('fill', d => colorBySeg[d.label])
+            .append('title')
+            .text(d => `${d.label}\nR$${d.value}M`);
 
-        const bars = rows.append('rect')
-            .attr('class', 'bar')
-            .attr('x', margin.left)
-            .attr('y', 22)
-            .attr('height', 16)
-            .attr('rx', 2)
-            .attr('width', 0);
+        const labeledSegments = ['Construction', 'Education'];
+
+        node.filter(d => labeledSegments.includes(d.label)).append('text')
+            .attr('class', 'bubble-label')
+            .attr('dy', '-0.15em')
+            .style('font-size', '20px')
+            .text(d => d.label);
+
+        node.filter(d => labeledSegments.includes(d.label)).append('text')
+            .attr('class', 'bubble-label bubble-value')
+            .attr('dy', '1.3em')
+            .style('font-size', '17px')
+            .text(d => fmtUSD(dollarsBySeg[d.label]));
 
         let animated = false;
 
-        function animateBars() {
+        function animateBubbles() {
             if (animated) return;
             animated = true;
-            bars.transition()
-                .duration(800)
-                .delay((d, i) => i * 90)
+            node.select('circle')
+                .transition()
+                .duration(700)
+                .delay((d, i) => i * 80)
                 .ease(d3.easeCubicOut)
-                .attr('width', d => x(d.value) - margin.left);
+                .attr('r', d => d.r);
         }
 
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    animateBars();
+                    animateBubbles();
                     observer.disconnect();
                 }
             });
@@ -499,6 +560,7 @@ the court ruled it lacked standing to file.
         observer.observe(document.getElementById('chart-section'));
     })();
     </script>
+
 
     <!-- ---------- script da linha do tempo (scrollytelling) ---------- -->
     <script>
@@ -558,6 +620,18 @@ the court ruled it lacked standing to file.
             .attr('transform', `translate(${margin.left},0)`)
             .call(d3.axisLeft(y).ticks(5));
 
+        // linha pontilhada divisória entre dez/25 e jan/26
+        const dividerX = (x('dec/25') + x('jan/26')) / 2;
+        svg.append('line')
+            .attr('class', 'divider-line')
+            .attr('x1', dividerX).attr('x2', dividerX)
+            .attr('y1', margin.top).attr('y2', height - margin.bottom);
+        svg.append('text')
+            .attr('class', 'divider-label')
+            .attr('x', dividerX + 4)
+            .attr('y', margin.top + 8)
+            .text('2026');
+
         const lineGen = d3.line()
             .x(d => x(d.month))
             .y(d => y(d.value))
@@ -590,6 +664,9 @@ the court ruled it lacked standing to file.
             .attr('stroke-dasharray', totalLength)
             .attr('stroke-dashoffset', totalLength);
 
+        const textboxRight = document.getElementById('textbox-right');
+        const textboxLeft = document.getElementById('textbox-left');
+
         function updateChart(progress) {
             const clamped = Math.max(0, Math.min(1, progress));
             path.attr('stroke-dashoffset', totalLength * (1 - clamped));
@@ -597,6 +674,11 @@ the court ruled it lacked standing to file.
             const revealedIndex = clamped * (data.length - 1);
             dots.attr('opacity', (d, i) => (i <= revealedIndex + 0.15 ? 1 : 0));
             dotLabels.attr('opacity', (d, i) => (i <= revealedIndex + 0.15 ? 1 : 0));
+
+            // caixa da direita aparece cedo (linha ainda em 2025);
+            // caixa da esquerda aparece depois que a linha cruza pra 2026
+            textboxRight.classList.toggle('is-visible', clamped >= 0.15 && clamped < 0.55);
+            textboxLeft.classList.toggle('is-visible', clamped >= 0.55);
         }
 
         function onScroll() {
